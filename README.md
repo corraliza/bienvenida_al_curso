@@ -1,54 +1,102 @@
-# IV Curso de Bioinformática (CIBEREHD)
+# Curso Avanzado de Bioinformática CIBEREHD  
+## Visualización de Datos en R (ggplot2, RMarkdown, Shiny)
 
-Este es el repositorio para el IV Curso de Bioinformática del CIBEREHD, impartido por Marta Coronado y Ana Maria Corraliza.
+### 🧠 Objetivo del curso
 
-## Descripción del Curso
+El objetivo de este curso es proporcionar a los participantes las habilidades necesarias para:
 
-En este curso, presentaremos *R* y *RStudio* como herramientas para el análisis de datos. R es un lenguaje de programación especialmente diseñado para el análisis estadístico de datos y la creación de gráficos. RStudio es un entorno de desarrollo integrado (IDE) para R, que permite utilizarlo de una manera más cómoda y eficaz.
+- Visualizar datos biológicos de manera efectiva utilizando la librería **ggplot2** y otras herramientas en R.
+- Crear reportes y presentaciones interactivas con **RMarkdown** y **Xaringan**.
+- Desarrollar aplicaciones interactivas de análisis de datos mediante **Shiny**.
 
-## Preparación
+Al finalizar el curso, los participantes podrán aplicar estas técnicas en sus propios proyectos, mejorando tanto la presentación como la interactividad de sus resultados.
 
-Antes de comenzar el curso, se recomienda instalar R y RStudio en tu ordenador. Hazlo con tiempo, y si tienes problemas al hacerlo, ponte en contacto con nosotras con antelación.
+---
 
-### Instalación de R y RStudio
+### 📚 Metodología
 
-- R se puede descargar desde [CRAN](https://cran.rediris.es). Debes elegir la versión adecuada para tu sistema operativo.
-- RStudio está disponible de forma gratuita en [RStudio Desktop](https://posit.co/download/rstudio-desktop/). La página detectará automáticamente tu sistema operativo y te ofrecerá el instalador correspondiente.
+El curso se impartirá a través de:
 
-Consulta los siguientes tutoriales para obtener ayuda específica según tu sistema operativo:
-- Windows: [Instalación de R y RStudio en Windows](https://datacritica.org/2021/03/18/instalacion-de-r-y-rstudio-en-windows)
-- Linux: [Cómo instalar R en Ubuntu 20.04](https://linuxize.com/post/how-to-install-r-on-ubuntu-20-04)
-- MacOS: [Instalación de R y RStudio en MacOS](https://datacritica.org/2021/03/19/instalacion-de-r-y-rstudio-en-macos)
+- **Sesiones teórico-prácticas online**, enfocadas en conceptos y ejemplos prácticos.
+- **Una práctica presencial intensiva**, centrada en el desarrollo de una aplicación interactiva.
 
-## Organización del Curso
+---
 
-El curso constará de tres sesiones teórico-prácticas online (6 horas) y una sesión totalmente práctica en formato asincrónico. En las sesiones online utilizaremos la herramienta RStudio en la nube, *Posit Cloud*, para realizar demostraciones y proporcionar materiales.
+### 🗓️ Programa del curso
 
-### Inscripción en Posit Cloud
+#### **Sesiones Online**
 
-Para utilizar Posit Cloud, ve a la web [posit.cloud](https://posit.cloud/) y regístrate en la opción *Cloud Free*. Una vez registrado, podrás acceder a RStudio. Pronto te proporcionaremos un enlace con el material del curso, para que puedas acceder a los materiales y ejecutar los códigos en la misma plataforma.
+##### 🗓 Miércoles 7 mayo 2025 | 🕓 16:00 – 18:00  
+**Tema: Visualización de datos en R con ggplot2**
 
-## Paquetes de R
+- Introducción a **ggplot2**
+  - Gramática de los gráficos
+  - Gráficos básicos: scatter, bar, line
+- Visualización avanzada
+  - Casos comunes en bioinformática
+  - Geoms avanzados y personalización con **ggpubr**
+- Otras herramientas:
+  - Introducción a **htmlwidgets**, **plotly** y **esquisse**
+- Ejercicios prácticos:
+  - Reproducción de gráficos
+  - Gráficos interactivos con **plotly**
 
-Durante el curso utilizaremos diferentes paquetes de R. Estos paquetes contienen funciones que nos permiten realizar tareas específicas. A continuación se detallan los paquetes que se utilizarán:
+---
 
-- BiocManager
-- utils
-- readr
-- learnr
-- readxl
-- ggplot2
-- ggpubr
-- car
-- limma
-- DESeq2
-- clusterProfiler
+##### 🗓 Lunes 12 mayo 2025 | 🕓 16:00 – 18:00  
+**Tema: Creación de informes automáticos y presentaciones**
 
-Se recomienda instalar estos paquetes antes de comenzar el curso. Para hacerlo, abre RStudio una vez instalados R y RStudio, y ejecuta las siguientes líneas en la consola:
+- Introducción a **RMarkdown**
+  - Estructura básica
+  - Código R y texto integrados
+  - Exportación a HTML, PDF, Word
+- Presentaciones con **Xaringan**
+  - Instalación y estructura
+  - Personalización de estilos
+- Ejercicios prácticos:
+  - Documento con gráficos integrados
+  - Presentación Xaringan
 
-```R
-install.packages(c("BiocManager", "utils", "readr", "learnr", 
-                   "readxl", "ggplot2", "ggpubr", "car"))
+---
 
-BiocManager::install(c("limma","DESeq2", "clusterProfiler"))
-```
+#### **Práctica Presencial**
+
+**Tema: Desarrollo de aplicaciones interactivas con R Shiny**
+
+- Introducción a **Shiny**
+  - Estructura: UI y server
+- Desarrollo de aplicaciones:
+  - Inputs, outputs y reactividad
+- Proyecto práctico:
+  - Aplicación completa
+  - Integración de ggplot2 y RMarkdown
+  - Despliegue y publicación
+
+**Sesión A:**  
+🗓 Viernes 16 mayo 2025 | 🕒 15:00 – 19:00  
+📍 Sala Margarita Salas 
+👥 15 participantes
+
+**Sesión B:**  
+🗓 Sábado 17 mayo 2025 | 🕘 09:00 – 13:00  
+📍 Sala Marie Curie  
+👥 15 participantes
+
+---
+
+### 🧰 Requisitos
+
+- Conocimientos básicos de R y RStudio
+- Ordenador portátil con R y RStudio instalados
+- Paquetes recomendados: `ggplot2`, `ggpubr`, `shiny`, `rmarkdown`, `xaringan`, `plotly`, `esquisse`
+
+---
+
+### 📩 Contacto
+
+Para dudas o más información, contactar con el equipo organizador del curso CIBEREHD.
+
+---
+
+**© 2025**  
+*Curso diseñado para fomentar el uso de herramientas modernas de análisis y presentación de datos en bioinformática.*
