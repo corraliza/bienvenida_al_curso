@@ -39,8 +39,7 @@ A continuació us deixem tres enllaços perquè pugueu instal·lar **R** segons 
 
 ## Instal·lació de RStudio
 
-Recordeu instal·lar la versió **gratuïta per a escriptori**:  
-[https://posit.co/download/rstudio-desktop/#download](https://posit.co/download/rstudio-desktop/#download)
+Recordeu instal·lar la versió **gratuïta per a escriptori**: [https://posit.co/download/rstudio-desktop](https://posit.co/download/rstudio-desktop/#download)
 
 La mateixa pàgina detectarà automàticament el vostre sistema operatiu i us recomanarà el fitxer d’instal·lació corresponent. En qualsevol cas, també trobareu més avall els enllaços per descarregar RStudio per a altres sistemes operatius.
 
