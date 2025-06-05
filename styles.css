@@ -1,0 +1,67 @@
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+h1, h2, h3 {
+  color: #C8945F;
+  border-bottom: 2px solid #C8945F;
+}
+
+a {
+  color: #69A297;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #69A297;
+}
+
+pre, code {
+  background-color: #f7f7f7;
+  border-left: 5px solid #f7f7f7;
+}
+
+.navbar, .tocify {
+  background-color: #C8945F;
+}
+
+.tocify .tocify-item.active {
+  color: #000000;
+}
+
+blockquote {
+  background-color: #fdf8f3;
+  padding-left: 10px;
+}
+
+
+/* Contenidor del TOC flotant */
+.tocify {
+  background-color: #fdf8f3; /* color de fons suau (pots posar #C8945F si vols) */
+  color: #000000; /* color del text */
+  border: 0px;
+  padding: 10px;
+}
+
+/* Títols del TOC */
+.tocify-header {
+  color: #F6E0CB;  /* vermell vi per a seccions */
+  font-weight: bold;
+}
+
+/* Elements del TOC */
+.tocify-item {
+  color: #333333;  /* color del text dels ítems */
+  font-size: 14px;
+  padding: 3px 0;
+}
+
+/* Element actiu (la secció actual) */
+.tocify-item.active {
+  background-color: #F6E0CB;
+  color: #fdf8f3;
+  font-weight: bold;
+  border-radius: 1px;
+}

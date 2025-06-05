@@ -1,80 +1,78 @@
 ---
-title: I Curso de Bioinformática Avanzada (CIBEREHD)
-author: Marta Coronado y Ana Maria Corraliza
-date: 11/05/2025
+title: "I Curs de Bioinformàtica (SCB)"
+author: "Marta Coronado i Ana Maria Corraliza"
+date: 05/06/2025
 output:
-  prettydoc::html_pretty:
-    theme: architect
-    highlight: github
-    embed-resources: true
-    standalone: true
+  html_document:
+    theme: flatly
+    css: styles.css
+    highlight: tango
+    toc: true
+    toc_depth: 2
+    toc_float: true
+    number_sections: false
+    df_print: paged
+    self_contained: true
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-#pagedown::chrome_print("Bienvenida_al_curso.html", output = "curso.pdf")
 ```
 
-# Bienvenida a la primera edición del curso de Bioinformática del CIBEREHD
+# Benvinguts / benvingudes
 
-El objetivo de este curso es proporcionar a los participantes las habilidades necesarias para visualizar datos biológicos de manera efectiva con la librería `ggplot2` y otras herramientas en R, crear informes y presentaciones interactivas utilizando `RMarkdown` y `Xaringan`, y desarrollar aplicaciones interactivas para el análisis de datos con la librería `Shiny.`
+Benvinguts i benvingudes a la primera edició del curs de Bioinformàtica de la Societat Catalana de Biologia. Aquest curs d’introducció a la bioinformàtica se centra en l’ús del llenguatge R per a l’anàlisi estadística i la visualització de dades. L’objectiu és que els participants adquireixin una base sòlida en aquest llenguatge de codi obert, àmpliament utilitzat en la recerca biomèdica.
 
-Al finalizar el curso, los participantes podrán aplicar estas técnicas en sus propios proyectos de análisis de datos, mejorando tanto la presentación como la interactividad de sus resultados.
+Es treballarà la importació i processament de dades, els tipus de dades en R i la creació de gràfics. També s’introduirà l’anàlisi de dades transcriptòmiques (RNA-seq) i l’estudi de variants en genomes vírics. S’empraran eines com R i Galaxy per recórrer tot el procés: des de les dades crues fins a la interpretació dels resultats.
 
-> Hemos verificado mediante un cuestionario que dispones de R en tu ordenador. Si no tienes instalado R y RStudio, por favor hazlo con antelación, y en caso de cualquier dificultad, no dudes en ponerte en contacto con nosotras.
+El curs s’adreça a professionals de la recerca clínica i biomèdica que vulguin iniciar-se en l’anàlisi de dades amb R, amb especial èmfasi en aplicacions en virologia i transcriptòmica.
 
-# Organización del curso
+El programa inclou dues sessions teoricopràctiques en línia (4 hores en total) i una sessió pràctica en format asíncrona (4 hores). Utilitzarem RStudio, es recomana tenir-lo instal·lat localment, però aquí us donem també l'opció d'utilitzar Rstudio Cloud.
 
-El curso se impartirá a través de una combinación de sesiones teórico-prácticas online y una práctica presencial. Las sesiones online estarán diseñadas para introducir conceptos teóricos clave y proporcionar ejemplos prácticos, mientras que la práctica presencial se centrará en la aplicación de estos conceptos a un proyecto concreto.
+## Instal·lació de R a l'ordinador
 
-## Paquetes de R
-Durante el curso utilizaremos diversas librerías (o paquetes) de R. Los paquetes contienen funciones que nos permiten realizar tareas específicas. Iremos instalando los necesarios a medida que avancemos, pero recomendamos que instales los siguientes antes de comenzar:
+A continuació us deixem tres enllaços perquè pugueu instal·lar **R** segons el sistema operatiu del vostre ordinador:
+
+- **Windows**: [https://cran.r-project.org/bin/windows/base/](https://cran.r-project.org/bin/windows/base/)
+- **Linux**: [https://linuxize.com/post/how-to-install-r-on-ubuntu-20-04/](https://linuxize.com/post/how-to-install-r-on-ubuntu-20-04/)
+- **macOS**: [https://datacritica.org/2021/03/19/instalacion-de-r-y-rstudio-en-macos/](https://datacritica.org/2021/03/19/instalacion-de-r-y-rstudio-en-macos/)
+
+## Instal·lació de RStudio
+
+Recordeu instal·lar la versió **gratuïta per a escriptori**:  
+[https://posit.co/download/rstudio-desktop/#download](https://posit.co/download/rstudio-desktop/#download)
+
+La mateixa pàgina detectarà automàticament el vostre sistema operatiu i us recomanarà el fitxer d’instal·lació corresponent. En qualsevol cas, també trobareu més avall els enllaços per descarregar RStudio per a altres sistemes operatius.
+
+\center ![](rstudio_desk.png){width="70%" height="70%"}
+\raggedright
+
+##  Paquets
+
+Els paquets que utilitzarem s’aniran instal·lant al llarg del curs. Tot i això, seria recomanable tenir-ne alguns preparats abans de començar.
+
+Per fer-ho, obriu **RStudio** un cop instal·lat i, a la pestanya `Console`, situada a la part inferior esquerra, enganxeu les línies següents:
 
 ```{r, eval = F}
-usar_paquetes <- function(paquetes) {
-  options(repos = c(CRAN = getCRANmirrors()[1, "URL"]))
-  
-  for (paquete in paquetes) {
-    if (!requireNamespace(paquete, quietly = TRUE)) {
-      message(sprintf("Intentando instalar '%s' desde CRAN...", paquete))
-      tryCatch({
-        install.packages(paquete)
-      }, error = function(e) {
-        message(sprintf("⚠️ No se pudo instalar el paquete '%s': %s", paquete, e$message))
-        next
-      })
-    }
-    
-    # Intentar cargar el paquete
-    if (requireNamespace(paquete, quietly = TRUE)) {
-      suppressPackageStartupMessages(library(paquete, character.only = TRUE))
-      message(sprintf("✅ Paquete '%s' cargado correctamente.", paquete))
-    } else {
-      message(sprintf("❌ No se pudo cargar el paquete '%s'.", paquete))
-    }
-  }
-}
+install.packages(c(
+  "dplyr", "ggplot2", "ggpubr", "readr", "gtsummary", "tidyverse",
+  "janitor", "lubridate", "tidyr", "ggsignif", "rstatix", 
+  "tibble", "viridis", "BiocManager", "utils", "learnr", "readxl", "car"
+))
 
-paquetes <- c(
-  # Herramientas y manipulación de datos
-  'tidyverse', 'dplyr', 'readr', 'esquisse',
-  
-  # Visualización
-  'ggplot2', 'ggpubr', 'plotly', 'dygraphs', 'leaflet', 'networkD3',
-  
-  # Informes y presentaciones
-  'rmarkdown', 'kableExtra', 'xaringanExtra', 'xaringanthemer',
-  
-  # Aplicaciones interactivas
-  'shiny'
-)
-
-usar_paquetes(paquetes)
+BiocManager::install(c("limma", "DESeq2", "clusterProfiler"))
 ```
 
+## RStudio Cloud:
 
-# Contacto
-Si necesitas ayuda puedes contactarnos:
+**RStudio Cloud** és una alternativa a la instal·lació de RStudio en el vostre ordinador. Es tracta d'una plataforma en línia que permet utilitzar RStudio des del navegador.
 
-* **Marta Coronado Zamora** (<marta.coronado@csic.es>)
-* **Ana Maria Corraliza Marquez** (<anacorralizamarquez@gmail.com>)
+Per crear un compte, aneu al web oficial: [https://posit.cloud/](https://posit.cloud/). Un cop a la pàgina, cliqueu l’opció **Sign Up**, que trobareu a la part superior dreta. Se us demanarà crear un compte nou o iniciar sessió amb un compte de Google, GitHub o d’altres opcions.
+
+Seleccioneu el pla **Cloud Free**, que és gratuït i suficient per a les activitats del curs. Un cop registrats, podreu accedir directament a l’entorn de treball de RStudio al núvol, des d’on farem totes les pràctiques.
+
+És recomanable familiaritzar-vos amb l’entorn abans de l’inici del curs, per tal d’assegurar que podeu accedir-hi sense problemes tècnics.
+
+\center ![](clo.png)
+
+\raggedright

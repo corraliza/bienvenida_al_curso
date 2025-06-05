@@ -1,102 +1,42 @@
-# Curso Avanzado de Bioinformática CIBEREHD  
-## Visualización de Datos en R (ggplot2, RMarkdown, Shiny)
+# I Curs de Bioinformàtica (SCB)
 
-### 🧠 Objetivo del curso
+**Autoria:** Marta Coronado i Ana Maria Corraliza  
+**Data:** 5 de juny de 2025  
+**Organitza:** Societat Catalana de Biologia (SCB)  
+**Format del curs:** En línia i asíncron (8 hores totals)
 
-El objetivo de este curso es proporcionar a los participantes las habilidades necesarias para:
+## 🎯 Objectiu
 
-- Visualizar datos biológicos de manera efectiva utilizando la librería **ggplot2** y otras herramientas en R.
-- Crear reportes y presentaciones interactivas con **RMarkdown** y **Xaringan**.
-- Desarrollar aplicaciones interactivas de análisis de datos mediante **Shiny**.
+Aquest curs introductori a la bioinformàtica té com a finalitat ensenyar els conceptes bàsics de l’anàlisi de dades biomèdiques utilitzant **R** i **RStudio**, amb aplicacions en transcriptòmica (RNA-seq) i virologia. Es treballaran aspectes pràctics com el processament i la visualització de dades, i també es farà servir **Galaxy** com a eina complementària.
 
-Al finalizar el curso, los participantes podrán aplicar estas técnicas en sus propios proyectos, mejorando tanto la presentación como la interactividad de sus resultados.
+## 📦 Contingut del `.Rmd`
 
----
+Aquest document R Markdown conté:
 
-### 📚 Metodología
+- Introducció al curs i objectius
+- Guia d’instal·lació de R i RStudio
+- Instruccions per accedir a **RStudio Cloud**
+- Codi per a la instal·lació de llibreries (CRAN i Bioconductor)
+- Explicació del format de les sessions
+- Configuració del document HTML (TOC, estils, tema, etc.)
 
-El curso se impartirá a través de:
+## 🛠 Requisits previs
 
-- **Sesiones teórico-prácticas online**, enfocadas en conceptos y ejemplos prácticos.
-- **Una práctica presencial intensiva**, centrada en el desarrollo de una aplicación interactiva.
+Abans d’obrir el `.Rmd`, assegureu-vos de tenir:
 
----
+- **R** instal·lat: [Enllaços d’instal·lació](https://cran.r-project.org/)
+- **RStudio Desktop** o accés a [RStudio Cloud](https://posit.cloud/)
+- Connexió a Internet per descarregar paquets
 
-### 🗓️ Programa del curso
+## 🔧 Instal·lació de paquets
 
-#### **Sesiones Online**
+Un cop tingueu **RStudio** obert, executeu aquest codi al panell `Console` per preparar l’entorn de treball:
 
-##### 🗓 Miércoles 7 mayo 2025 | 🕓 16:00 – 18:00  
-**Tema: Visualización de datos en R con ggplot2**
+```r
+install.packages(c(
+  "dplyr", "ggplot2", "ggpubr", "readr", "gtsummary", "tidyverse",
+  "janitor", "lubridate", "tidyr", "ggsignif", "rstatix", 
+  "tibble", "viridis", "BiocManager", "utils", "learnr", "readxl", "car"
+))
 
-- Introducción a **ggplot2**
-  - Gramática de los gráficos
-  - Gráficos básicos: scatter, bar, line
-- Visualización avanzada
-  - Casos comunes en bioinformática
-  - Geoms avanzados y personalización con **ggpubr**
-- Otras herramientas:
-  - Introducción a **htmlwidgets**, **plotly** y **esquisse**
-- Ejercicios prácticos:
-  - Reproducción de gráficos
-  - Gráficos interactivos con **plotly**
-
----
-
-##### 🗓 Lunes 12 mayo 2025 | 🕓 16:00 – 18:00  
-**Tema: Creación de informes automáticos y presentaciones**
-
-- Introducción a **RMarkdown**
-  - Estructura básica
-  - Código R y texto integrados
-  - Exportación a HTML, PDF, Word
-- Presentaciones con **Xaringan**
-  - Instalación y estructura
-  - Personalización de estilos
-- Ejercicios prácticos:
-  - Documento con gráficos integrados
-  - Presentación Xaringan
-
----
-
-#### **Práctica Presencial**
-
-**Tema: Desarrollo de aplicaciones interactivas con R Shiny**
-
-- Introducción a **Shiny**
-  - Estructura: UI y server
-- Desarrollo de aplicaciones:
-  - Inputs, outputs y reactividad
-- Proyecto práctico:
-  - Aplicación completa
-  - Integración de ggplot2 y RMarkdown
-  - Despliegue y publicación
-
-**Sesión A:**  
-🗓 Viernes 16 mayo 2025 | 🕒 15:00 – 19:00  
-📍 Sala Margarita Salas 
-👥 15 participantes
-
-**Sesión B:**  
-🗓 Sábado 17 mayo 2025 | 🕘 09:00 – 13:00  
-📍 Sala Marie Curie  
-👥 15 participantes
-
----
-
-### 🧰 Requisitos
-
-- Conocimientos básicos de R y RStudio
-- Ordenador portátil con R y RStudio instalados
-- Paquetes recomendados: `ggplot2`, `ggpubr`, `shiny`, `rmarkdown`, `xaringan`, `plotly`, `esquisse`
-
----
-
-### 📩 Contacto
-
-Para dudas o más información, contactar con el equipo organizador del curso CIBEREHD.
-
----
-
-**© 2025**  
-*Curso diseñado para fomentar el uso de herramientas modernas de análisis y presentación de datos en bioinformática.*
+BiocManager::install(c("limma", "DESeq2", "clusterProfiler"))
