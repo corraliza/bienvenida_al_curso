@@ -54,12 +54,13 @@ Per fer-ho, obriu **RStudio** un cop instal·lat i, a la pestanya `Console`, sit
 
 ```{r, eval = F}
 install.packages(c(
-  "dplyr", "ggplot2", "ggpubr", "readr", "gtsummary", "tidyverse",
-  "janitor", "lubridate", "tidyr", "ggsignif", "rstatix", 
-  "tibble", "viridis", "BiocManager", "utils", "learnr", "readxl", "car"
+  "dplyr", "ggplot2", "ggpubr", "gtsummary", "tidyverse",
+  "janitor", "lubridate", "ggsignif", "rstatix", "kableExtra",
+  "viridis", "BiocManager", "learnr", "readxl", "car",
+  "apeglm", "pheatmap", "ggrepel", "RColorBrewer"
 ))
 
-BiocManager::install(c("limma", "DESeq2", "clusterProfiler"))
+BiocManager::install(c("limma", "DESeq2", "clusterProfiler", "org.Hs.eg.db", 'biomaRt'))
 ```
 
 ## RStudio Cloud:
